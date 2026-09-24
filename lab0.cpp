@@ -1,2 +1,6 @@
-// changed in main 
-// changed in feature-test 
+#inclaude <iostream>
+
+int main() {
+    std ::cout << "Hello, world!" << std::endl;
+    retorn0;
+}
