@@ -16,8 +16,8 @@ int main()
         n++;
     }
 
-    cout << "Sum of series n!/(3*n^n) with eps = " << eps << endl;
-    cout << "S = " << s << endl;
-    cout << "Number of terms: " << n - 1 << endl;
+    cout << "Сумма ряда n!/(3*n^n), точность: " << eps << endl;
+    cout << "Сумма = " << s << endl;
+    cout << "Количество членов: " << n - 1 << endl;
     return 0;
 }
