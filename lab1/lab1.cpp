@@ -29,15 +29,29 @@ int main()
     cout << "float:" << endl;
     cout << "(a+b)^3 = " << c << endl;
     cout << "a^3 + 3a^2b = " << d + e << endl;
-    cout << "numerator = " << numf << endl;
-    cout << "denominator = " << denf << endl;
-    cout << "result = " << resf << endl << endl;
+    cout << "Числитель = " << numf << endl;
+    cout << "Знаменатель = " << denf << endl;
+    cout << "Результат = " << resf << endl << endl;
 
     cout << "double:" << endl;
     cout << "(a+b)^3 = " << c2 << endl;
     cout << "a^3 + 3a^2b = " << d2 + e2 << endl;
-    cout << "numerator = " << numd << endl;
-    cout << "denominator = " << dend << endl;
-    cout << "result = " << resd << endl;
+    cout << "Числитель = " << numd << endl;
+    cout << "Знаменатель = " << dend << endl;
+    cout << "Результат = " << resd << endl;
+
+    int m, n;
+    cout << "\nВведите m и n: ";
+    cin >> m >> n;
+
+    int r1 = m + --n;
+    cout << "m + --n = " << r1 << "; m = " << m << ", n = " << n << endl;
+
+    bool r2 = m++ < ++n;
+    cout << "m++ < ++n = " << r2 << "; m = " << m << ", n = " << n << endl;
+
+    bool r3 = n-- < --m;
+    cout << "n-- < --m = " << r3 << "; m = " << m << ", n = " << n << endl;
+
     return 0;
 }
