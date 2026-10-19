@@ -5,53 +5,65 @@ using namespace std;
 
 int main()
 {
-    float a = 1000, b = 0.0001f;
-    float c = pow(a + b, 3);
-    float d = pow(a, 3);
-    float e = 3 * a * a * b;
-    float f = 3 * a * b * b;
-    float g = pow(b, 3);
-    float numf = c - (d + e);
-    float denf = f + g;
-    float resf = numf / denf;
+    float a_float, b_float;
+    float kub_summy_float, kub_a_float;
+    float tri_a2b_float, tri_ab2_float, kub_b_float;
+    float chislitel_float, znamenatel_float, otvet_float;
+    double a_double, b_double;
+    double kub_summy_double, kub_a_double;
+    double tri_a2b_double, tri_ab2_double, kub_b_double;
+    double chislitel_double, znamenatel_double, otvet_double;
+    int m, n, summa_vyrazheniya;
+    bool sravnenie_1, sravnenie_2;
 
-    double a2 = 1000, b2 = 0.0001;
-    double c2 = pow(a2 + b2, 3);
-    double d2 = pow(a2, 3);
-    double e2 = 3 * a2 * a2 * b2;
-    double f2 = 3 * a2 * b2 * b2;
-    double g2 = pow(b2, 3);
-    double numd = c2 - (d2 + e2);
-    double dend = f2 + g2;
-    double resd = numd / dend;
+    a_float = 1000.0f;
+    b_float = 0.0001f;
+    a_double = 1000.0;
+    b_double = 0.0001;
+
+    kub_summy_float = pow(a_float + b_float, 3);
+    kub_a_float = pow(a_float, 3);
+    tri_a2b_float = 3 * a_float * a_float * b_float;
+    tri_ab2_float = 3 * a_float * b_float * b_float;
+    kub_b_float = pow(b_float, 3);
+    chislitel_float = kub_summy_float - (kub_a_float + tri_a2b_float);
+    znamenatel_float = tri_ab2_float + kub_b_float;
+    otvet_float = chislitel_float / znamenatel_float;
+
+    kub_summy_double = pow(a_double + b_double, 3);
+    kub_a_double = pow(a_double, 3);
+    tri_a2b_double = 3 * a_double * a_double * b_double;
+    tri_ab2_double = 3 * a_double * b_double * b_double;
+    kub_b_double = pow(b_double, 3);
+    chislitel_double = kub_summy_double
+                       - (kub_a_double + tri_a2b_double);
+    znamenatel_double = tri_ab2_double + kub_b_double;
+    otvet_double = chislitel_double / znamenatel_double;
 
     cout << setprecision(10);
     cout << "float:" << endl;
-    cout << "(a+b)^3 = " << c << endl;
-    cout << "a^3 + 3a^2b = " << d + e << endl;
-    cout << "Числитель = " << numf << endl;
-    cout << "Знаменатель = " << denf << endl;
-    cout << "Результат = " << resf << endl << endl;
-
+    cout << "Числитель = " << chislitel_float << endl;
+    cout << "Знаменатель = " << znamenatel_float << endl;
+    cout << "Результат = " << otvet_float << endl << endl;
     cout << "double:" << endl;
-    cout << "(a+b)^3 = " << c2 << endl;
-    cout << "a^3 + 3a^2b = " << d2 + e2 << endl;
-    cout << "Числитель = " << numd << endl;
-    cout << "Знаменатель = " << dend << endl;
-    cout << "Результат = " << resd << endl;
+    cout << "Числитель = " << chislitel_double << endl;
+    cout << "Знаменатель = " << znamenatel_double << endl;
+    cout << "Результат = " << otvet_double << endl << endl;
 
-    int m, n;
-    cout << "\nВведите m и n: ";
+    cout << "Введите m и n: ";
     cin >> m >> n;
 
-    int r1 = m + --n;
-    cout << "m + --n = " << r1 << "; m = " << m << ", n = " << n << endl;
+    summa_vyrazheniya = m + --n;
+    cout << "m + --n = " << summa_vyrazheniya;
+    cout << "; m = " << m << ", n = " << n << endl;
 
-    bool r2 = m++ < ++n;
-    cout << "m++ < ++n = " << r2 << "; m = " << m << ", n = " << n << endl;
+    sravnenie_1 = m++ < ++n;
+    cout << "m++ < ++n = " << sravnenie_1;
+    cout << "; m = " << m << ", n = " << n << endl;
 
-    bool r3 = n-- < --m;
-    cout << "n-- < --m = " << r3 << "; m = " << m << ", n = " << n << endl;
+    sravnenie_2 = n-- < --m;
+    cout << "n-- < --m = " << sravnenie_2;
+    cout << "; m = " << m << ", n = " << n << endl;
 
     return 0;
 }

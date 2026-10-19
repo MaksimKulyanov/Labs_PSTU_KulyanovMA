@@ -4,20 +4,26 @@ using namespace std;
 
 int main()
 {
-    const double eps = 0.0001;
-    int n = 1;
-    double a = 1.0 / 3;
-    double s = 0;
+    const double tochnost = 0.0001;
+    double tekushiy_chlen, summa_ryada;
+    int nomer_chlena, kolichestvo_chlenov;
 
-    while (fabs(a) >= eps)
+    nomer_chlena = 1;
+    tekushiy_chlen = 1.0 / 3.0;
+    summa_ryada = 0.0;
+
+    while (fabs(tekushiy_chlen) >= tochnost)
     {
-        s += a;
-        a = a * pow((double)n / (n + 1), n);
-        n++;
+        summa_ryada += tekushiy_chlen;
+        tekushiy_chlen *= pow((double)nomer_chlena / (nomer_chlena + 1),
+                           nomer_chlena);
+        nomer_chlena++;
     }
 
-    cout << "Сумма ряда n!/(3*n^n), точность: " << eps << endl;
-    cout << "Сумма = " << s << endl;
-    cout << "Количество членов: " << n - 1 << endl;
+    kolichestvo_chlenov = nomer_chlena - 1;
+    cout << "Сумма ряда n!/(3*n^n), точность: " << tochnost << endl;
+    cout << "Сумма = " << summa_ryada << endl;
+    cout << "Количество членов: " << kolichestvo_chlenov << endl;
+
     return 0;
 }
